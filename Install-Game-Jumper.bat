@@ -20,7 +20,6 @@ if %errorLevel% neq 0 (
 )
 echo.
 set /p "spacewarPath=Path of Spacewar (e.g. 'C:\Program Files (x86)\Steam\steamapps\common\Spacewar'): "
-echo --------------------------------------------------
 curl -s https://api.github.com/repos/KaioHSG/game-jumper/releases/latest > %temp%\latest-release.json
 for /f "tokens=3 delims=:" %%a in ('findstr /i "browser_download_url" %temp%\latest-release.json') do set "url=https:%%a"
 del /q "%temp%\latest-release.json"
